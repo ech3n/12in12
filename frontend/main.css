@@ -1,0 +1,800 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+
+/* reset */
+/******** global reset ********/
+html, body {
+  -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+          text-size-adjust: 100%;
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block; }
+
+textarea {
+  resize: none; }
+
+a {
+  outline: 0;
+  text-decoration: none; }
+
+a:hover {
+  text-decoration: none; }
+
+a:active, a:hover {
+  outline: 0; }
+
+a:focus {
+  -moz-outline-style: none;
+  outline: none; }
+
+img {
+  border: 0;
+  vertical-align: middle; }
+
+button, select {
+  text-transform: none; }
+
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */ }
+
+button::-moz-focus-inner, input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+select, textarea, input, button:focus {
+  outline: none; }
+
+input {
+  line-height: normal;
+  border-radius: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none; }
+
+input[type="checkbox"], input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
+  height: auto; }
+
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  box-sizing: content-box;
+  /* 2 */ }
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+td, th {
+  padding: 0; }
+
+ol, ul {
+  list-style: outside none none; }
+
+q::before, q::after, blockquote::before, blockquote::after {
+  content: ""; }
+
+body, html {
+  font-size: 16px;
+/*  font-family: Time, serif;*/
+	font-family: "Noto Sans TC", "Microsoft JhengHei", "Apple LiGothic Medium", sans-serif, "Trebuchet MS", Helvetica, Arial;  color: #666;
+  color: #666;
+  background-color: #f8f8f8;
+  /*for Chrome browser in OSX better user experience*/
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  width: 100%; }
+
+/*::selection {background-color: $hightLight;}*/
+/*::-moz-selection {background-color: $hightLight;}*/
+a, button, input, textarea {
+  -webkit-transition: .3s;
+  transition: .3s;
+  -weblit-transition: .3s;
+  font-size: 16px;
+  font-family: 'Helvetica', sans-serif; }
+
+/*heading reset*/
+h1, h2, h3, h4, h5, h6 {
+  font-size: 24px;
+  color: #2b2524;
+  font-weight: normal; }
+
+/*display on && off*/
+.off {
+  display: none !important; }
+
+.on {
+  display: block !important; }
+
+.flex {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important; }
+
+/*screen only*/
+.sr {
+  font-size: 0;
+  width: 0;
+  height: 0; }
+.more {
+	display: none;
+}
+
+.body::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px transparent;
+	border-radius: 10px;
+	background-color: transparent;
+}
+
+.body::-webkit-scrollbar {
+	width: .5px;
+	background-color: transparent;
+}
+
+.body::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px transparent;
+	background-color: transparent;
+}
+
+
+/* header */
+
+.header {
+	width: 100%;
+	background-color: #2b2524;
+	position: fixed;
+	top: 0;
+	box-shadow: 0 1px 20px #2b2524;
+	z-index: 10;
+}
+
+.header_panel {
+	height: 42px;
+	margin: 0 auto;
+	overflow: auto;
+	max-width: 1200px;
+}
+
+.header_panel > .logo {
+	float: left;
+}
+
+.logo > a {
+	font-family: 'Roboto', sans-serif;
+	display: inline-block;
+	line-height: 42px;
+	color: #fff;
+	font-size: 20px;
+}
+
+.logo > a:before {
+	content: "";
+	display: inline-block;
+	width: 42px;
+	height: 42px;
+	background: url('images/meetup_logo.png') no-repeat center;
+	background-size: contain;
+	vertical-align: bottom;
+}
+
+.search_panel {
+	float: left;
+	height: 27px;
+	background-color: #fff;
+	margin-top: 8px;
+	margin-left: 30px;
+	width: 450px;
+	overflow: auto;
+}
+
+.search_panel > label {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	background-image: url('images/search.svg');
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	margin-top: 3px;
+	margin-left: 3px;
+	cursor: pointer;
+	float: left;
+}
+
+.search_panel > .search_input {
+	float: left;
+	width: calc(100% - 40px);
+	height: 27px;
+	padding-left: 10px;
+}
+
+.header > a {
+	position: absolute;
+	display: block;
+	width: 45px;
+	height: 42px;
+	background: url("images/arrow.png") no-repeat center;
+	top: 0;
+}
+
+.tag_index_btn {
+	left: -45px;
+	transform: rotateY(180deg);
+}
+
+.tag_index_btn:before {
+	content: "";
+	display: block;
+	height: 42px;
+	width: 20px;
+	background: url('https://a248.e.akamai.net/secure.meetupstatic.com/photos/event/a/8/2/8/global_459283048.jpeg') no-repeat center;
+	background-size: contain;
+	position: absolute;
+	right: 6px;
+}
+
+.meetup_events_btn {
+	right: -45px;
+}
+
+.meetup_events_btn:before {
+	content: "";
+	display: block;
+	height: 42px;
+	width: 27px;
+	background: url('images/meetup_logo.png') no-repeat center;
+	background-size: contain;
+	position: absolute;
+	right: 2px;
+}
+
+/* header End */
+
+
+
+.container {
+	max-width: 1200px;
+	margin: 42px auto 0;
+	clear: both;
+	overflow: auto;
+	transition: .35s;
+	border-right: 1px solid #2b2524;
+	border-left: 1px solid #2b2524;
+	position: relative;
+}
+
+.mask {
+	position: relative;
+	filter: blur(7px);
+	-webkit-filter: blur(7px);
+	opacity: .25;
+	z-index: -1;
+}
+
+/* tag_index */
+
+.tag_index {
+	float: left;
+	width: 15%;
+}
+
+.tag_index > a {
+	display: block;
+	width: calc(100% - 5px);
+	margin: 5px;
+	margin-right: 0;
+	border: 2px solid #A9D6CF;
+	text-align: center;
+	color: #fff;
+	background-color: #479891;
+	font-family: 'Roboto', sans-serif;
+	font-size: 24px;
+} 
+
+/* tag_index End */
+
+
+/* main_article */
+.main_article {
+	float: left;
+	width: 45%;
+}
+
+.article_list {
+	margin: 5px;
+	border: 1px solid #2b2524;
+}
+
+.article_list > .pic {
+	width: 100%;
+	max-height: 250px;
+/*	box-shadow: 1px 1px 5px 0 #2b2524;*/
+	padding: 5px;
+}
+
+.article_title {
+	font-size: 24px;
+	padding: 10px 0;
+	margin: 0 5px;
+	font-weight: 700;
+	font-family: 'Roboto', sans-serif;
+	border-bottom: 2px solid #2b2524;
+}
+
+.article_description {
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+	padding: 0px 6px 0 6px;
+	margin: 5px 0;
+}
+
+.article_description + a {
+	display: none;
+	height: 35px;
+	text-align: center;
+	font-size: 30px;
+	color: #2b2524;
+	line-height: 25px;
+	font-size: 45px;
+}
+
+.article_description.article_more {
+	max-height: 155px;
+	overflow: hidden;	
+}
+
+.article_more + a {
+	display: block;
+}
+
+/* main_article End */
+
+/* meetup_events */
+.meetup_events {
+	float: left;
+	width: 40%;
+	margin-top: 5px;
+}
+
+.meetup_list {
+	clear: both;
+	overflow: auto;
+	margin-right: 5px;
+	font-family: 'Roboto', sans-serif;
+	border-bottom: 1px solid #2b2524;
+}
+.meetup_list ~ .meetup_list {
+	margin-top: 10px;
+}
+
+.meetup_content {
+	font-family: 'Roboto', sans-serif;
+	float: left;
+	width: 80%;
+	max-width: 380px;
+	position: relative;
+	padding-bottom: 5px;
+	
+}
+
+.meetup_date {
+	position: absolute;
+	font-size: 40px;
+	color: #2b2524;
+	left: -2px;
+	top: -4px;
+}
+
+.meetup_title {
+	display: block;
+	font-size: 24px;
+	font-weight: 700;
+	padding-left: 114px;
+	height: 34px;
+	margin-bottom: 10px;
+	position: relative;
+}
+
+.meetup_title:before {
+	content: "";
+	display: block;
+	width: calc(100% - 114px);
+	height: 2px;
+	background-color: #2b2524;
+	position: absolute;
+	bottom: -1px;
+}
+
+.meetup_info + a {
+	display: none;
+	height: 35px;
+	text-align: center;
+	color: #2b2524;
+	line-height: 25px;
+	font-size: 45px;
+}
+
+.meetup_info {
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+	padding: 0px 6px 0 6px;
+	margin: 5px 0;
+}
+
+.meetup_info.meetup_more {
+	max-height: 155px;
+	overflow: hidden;
+}
+
+.meetup_more + a {
+	display: block;
+}
+
+.meetup_btn {
+	font-family: 'Roboto', sans-serif;
+	float: right;
+	display: block;
+	width: 16%;
+	text-align: center;
+	color: #fff;
+	font-size: 20px;
+	height: 75px;
+	line-height: 75px;
+	font-weight: 700;
+	background-color: #cf2026;
+	box-shadow: 3px 1px 10px 0 #2b2524;
+}
+
+
+
+
+/* meetup_events End */
+
+
+/* responsive starting at 960px */
+@media(max-width: 960px) {
+	.header_panel > .logo {
+		float: none;
+	}
+	
+	.logo > a {
+		display: block;
+		width: 316px;
+		margin: 0 auto;
+	}
+	
+	.logo > a:before {
+		display: none;
+	}
+	
+	.search_panel {
+		position: fixed;
+		right: 0;
+		bottom: 5px;
+		left: 0;
+		float: none;
+		width: 40px;
+		height: 40px;
+		margin: auto;
+		overflow: initial;
+		z-index: 9;
+	}
+
+	.search_panel > label {
+		padding: 0;
+		margin: 0;
+		width: 40px;
+		height: 40px;
+		background-size: 25px;
+		background-image: url('images/search_1.svg');
+		background-color: #2b2524;
+		float: none;
+	}
+	
+	.search_panel > .search_input {
+		width: 0;
+		height: 0;
+		padding: 0;
+	}
+	
+	.search_panel.mobile_expand {
+		right: initial;
+		bottom: initial;
+		top: 50px;
+		left: 10px;
+		z-index: 9;
+		width: 95%;
+		overflow: auto;
+		transition: .3s;
+		-webkit-box-shadow: 1px 1px 5px 0 #2b2524;
+		box-shadow: 1px 1px 5px 0 #2b2524;
+	}
+	
+	.search_panel.mobile_expand:before {
+		content: "";
+		position: fixed;
+		width: 100%;
+		background-color: rgba(43, 37, 36, .4);
+	}
+	
+	.mobile_expand > label {
+		float: left;	
+	}
+	
+	.mobile_expand > .search_input {
+		width: calc( 100% - 50px );
+		padding-left: 10px;
+		height: 40px;
+	}
+	
+	.tag_index_btn {
+		left: 0;	
+	}
+	
+	.meetup_events_btn {
+		right: 0;
+	}
+	.tag_index_btn.r-show {
+		left: -100%;
+	}
+	.meetup_events_btn.r-show {
+		right: calc(100% - 45px);
+		transform: rotateY(180deg);
+	}
+	
+	.tag_index_btn.l-show {
+		left: calc(100% - 45px);
+		transform: rotateY(0deg);
+	}
+	.meetup_events_btn.l-show {
+		right: -100%;
+	}
+	
+	.container {
+		overflow-x: hidden;
+	}
+	
+	.main_article {
+		width: 100%;
+		float: none;
+	}
+	
+	.tag_index {
+		position: absolute;
+		float: none;
+		left: -180px;
+		width: 180px;
+		transition: .6s;
+	}
+	
+	.tag_index.l-show {
+		left: 0;
+		box-shadow: 3px 1px 10px 0 #2b2524;
+		animation-duration: 1s;
+  	animation-fill-mode: both;
+		-webkit-animation-name: bounceInLeft;
+  	animation-name: bounceInLeft;
+	}
+	
+	.meetup_events {
+		position: absolute;
+		float: none;
+		top: 0;
+		width: 100%;
+		right: -100%;
+		background-color: #fff;
+		transition: .6s;
+	}
+	
+	.meetup_events.r-show {
+		right: 0;
+		box-shadow: -3px 1px 10px 0 #2b2524;
+		animation-duration: 1s;
+  	animation-fill-mode: both;
+  	-webkit-animation-name: bounceInRight;
+  	animation-name: bounceInRight;	
+	}
+	
+	@-webkit-keyframes bounceInRight {
+  from, 60%, 75%, 90%, to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(3000px, 0, 0);
+    transform: translate3d(3000px, 0, 0);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(-25px, 0, 0);
+    transform: translate3d(-25px, 0, 0);
+  }
+
+  75% {
+    -webkit-transform: translate3d(10px, 0, 0);
+    transform: translate3d(10px, 0, 0);
+  }
+
+  90% {
+    -webkit-transform: translate3d(-5px, 0, 0);
+    transform: translate3d(-5px, 0, 0);
+  }
+
+  to {
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+	@-webkit-keyframes bounceInLeft {
+  from, 60%, 75%, 90%, to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(-3000px, 0, 0);
+    transform: translate3d(-3000px, 0, 0);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(25px, 0, 0);
+    transform: translate3d(25px, 0, 0);
+  }
+
+  75% {
+    -webkit-transform: translate3d(-10px, 0, 0);
+    transform: translate3d(-10px, 0, 0);
+  }
+
+  90% {
+    -webkit-transform: translate3d(5px, 0, 0);
+    transform: translate3d(5px, 0, 0);
+  }
+
+  to {
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes bounceInLeft {
+  from, 60%, 75%, 90%, to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(-3000px, 0, 0);
+    transform: translate3d(-3000px, 0, 0);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(25px, 0, 0);
+    transform: translate3d(25px, 0, 0);
+  }
+
+  75% {
+    -webkit-transform: translate3d(-10px, 0, 0);
+    transform: translate3d(-10px, 0, 0);
+  }
+
+  90% {
+    -webkit-transform: translate3d(5px, 0, 0);
+    transform: translate3d(5px, 0, 0);
+  }
+
+  to {
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes bounceInRight {
+  from, 60%, 75%, 90%, to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(3000px, 0, 0);
+    transform: translate3d(3000px, 0, 0);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(-25px, 0, 0);
+    transform: translate3d(-25px, 0, 0);
+  }
+
+  75% {
+    -webkit-transform: translate3d(10px, 0, 0);
+    transform: translate3d(10px, 0, 0);
+  }
+
+  90% {
+    -webkit-transform: translate3d(-5px, 0, 0);
+    transform: translate3d(-5px, 0, 0);
+  }
+
+  to {
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+	
+	.meetup_date {
+		text-indent: 3px;	
+	}
+
+	.meetup_title {
+		font-size: 20px;
+	}
+	
+	
+	
+}
+
+@media(max-width: 500px) {
+	.logo > a {
+		font-size: 16px;
+		width: 252px;
+	}
+}
+
+@media(max-width: 500px) {
+	.logo > a {
+		font-size: 16px;
+		width: 252px;
+	}
+}
+
+
+@media(max-width: 420px) {
+	.logo > a {
+		font-size: 14px;
+		width: 221px;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
