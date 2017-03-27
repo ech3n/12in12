@@ -266,7 +266,7 @@ h1, h2, h3, h4, h5, h6 {
 	display: block;
 	height: 42px;
 	width: 27px;
-	background: url('images/meetup_logo.png') no-repeat center;
+	background: url('images/meetup_logo2.png') no-repeat center;
 	background-size: contain;
 	position: absolute;
 	right: 2px;
@@ -307,12 +307,12 @@ h1, h2, h3, h4, h5, h6 {
 	width: calc(100% - 5px);
 	margin: 5px;
 	margin-right: 0;
-	border: 2px solid #A9D6CF;
 	text-align: center;
 	color: #fff;
-	background-color: #479891;
+	background-color: #006cb7;
 	font-family: 'Roboto', sans-serif;
 	font-size: 24px;
+	box-shadow: 3px 1px 10px 0 #2b2524
 } 
 
 /* tag_index End */
