@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Try Canvas
+    </title>
+    <meta charset=“UTF-8”>
+
+  </head>
+  <body>
+    <h2> 方形 | Rectangle </h2>
+    <canvas id=‘myCanvas1’ width=‘200’ height=‘200’ style=‘border: 1px solid #000000’></canvas>
+
+    <h2> 直線 | Line </h2>
+    <canvas id=‘myCanvas2’ width=‘200’ height=‘200’ style=‘border: 1px solid #000000’></canvas>
+
+    <h2> 圓形 | Circle  </h2>
+    <canvas id=‘myCanvas3’ width=‘200’ height=‘200’ style=‘border:1px solid #000000’></canvas>
+
+    <h2> 漸層 | Gradient  </h2>
+    <canvas id=‘myCanvas4’ width=‘200’ height=‘200’ style=‘border:1px solid #000000’></canvas>
+
+    <h2> 文字 | Text </h2>
+    <canvas id=‘myCanvas5’ width=‘200’ height=‘200’ style=‘border:1px solid #000000’></canvas>
+
+    <h2> 圖片 | Image </h2>
+    <canvas id=‘myCanvas6’ width=‘200’ height=‘200’ style=‘border:1px solid #000000’></canvas>
+
+  <script>
+    var canvas1 = document.getElementById(‘myCanvas1’);
+    var ctx1 = canvas1.getContext(‘2d’);
+    // ctx is a drawing object
+    ctx1.fillStyle = ‘#FF0000’;
+    ctx1.fillRect(10,10,180,180);
+    
+	var canvas2 = document.getElementById(‘myCanvas2’);
+    var ctx2 = canvas2.getContext(‘2d’);
+    ctx2.moveTo(10,10);
+    ctx2.lineTo(180, 180);
+    ctx2.stroke();
+    
+	var canvas3 = document.getElementById(‘myCanvas3’);
+    var ctx3 = canvas3.getContext(‘2d’);
+    ctx3.beginPath();
+    ctx3.fillStyle = ‘#ddd’;
+    ctx3.arc(100, 100, 90, 0, 2*Math.PI);
+    ctx3.fill();
+    
+	var canvas4 = document.getElementById(‘myCanvas4’);
+    var ctx4 = canvas4.getContext(‘2d’);
+    var gradient = ctx4.createLinearGradient(0, 0, 200, 0);
+    gradient.addColorStop(0, ‘red’);
+    gradient.addColorStop(1, ‘white’);
+    ctx4.fillStyle = gradient;
+    ctx4.fillRect(10, 10, 180, 180);
+    
+	var canvas5 = document.getElementById(‘myCanvas5’);
+    var ctx5 = canvas5.getContext(‘2d’);
+    ctx5.font = ‘30px Arial’;
+    ctx5.fillStyle = ‘#666666’;
+    ctx5.textAlign = ‘center’;
+    ctx5.fillText(‘Hello World’, canvas5.width/2, canvas5.width/2);
+    
+	var canvas6 = document.getElementById(‘myCanvas6’);
+    var ctx6 = canvas6.getContext(‘2d’);
+    var img = new Image();
+    img.addEventListener(‘load’, function() {
+      ctx6.drawImage(img, 0, 0);
+    }, false)
+    img.src = ‘./pic_the_scream.jpg’;
+	
+  </script>
+  </body>
