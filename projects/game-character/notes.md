@@ -131,7 +131,7 @@ var charY = 185
 ```
 
 Loading *index.html* should show our basic character:  
-![Basic Game Character](/images/screenshot01.png "Basic Character")
+![Basic Game Character](./images/screenshot01.png "Basic Character")
 
 7) write new ``drawEllipse()`` function:
 
@@ -173,7 +173,7 @@ function redraw() {
 }
 ```
 
-![Add eyes to our character](/images/screenshot02.png "Eyes...")
+![Add eyes to our character](./images/screenshot02.png "Eyes...")
 
 
 8) Draw shadow right after the canvas is cleared
